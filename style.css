@@ -1,0 +1,476 @@
+*{ 
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:linear-gradient(90deg,#0f172a,#1f2937);
+    color:white;
+    display:flex;
+    align-items:center;
+    padding:22px 50px;
+    position:relative;
+    min-height:80px;
+    border-bottom:5px solid #f59e0b; /* linea obra */
+}
+
+/* LOGO */
+.logo{
+    position:absolute;
+    left:40px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.logo img{
+    max-height:65px;
+}
+
+/* MENU */
+nav{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:35px;
+}
+
+/* ===== BOTONES MENU ESTILO PROFESIONAL ===== */
+
+nav a{
+    color:#facc15;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:20px;
+    padding:10px 16px;
+    border-radius:10px;
+    background:#111827;
+    border:2px solid #f59e0b;
+    transition:0.25s;
+}
+
+nav a:hover{
+    background:#f59e0b;
+    color:#111827;
+}
+
+/* BANDERAS */
+.idiomas{
+    position:absolute;
+    right:40px;
+}
+
+.idiomas img{
+    width:40px;
+    margin-left:12px;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+    url("fondo.avif") center/cover no-repeat;
+    min-height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 20px;
+}
+
+.hero-texto{
+    background:rgba(15,23,42,.85);
+    padding:50px 80px;
+    text-align:center;
+    color:white;
+    border-radius:14px;
+    border:3px solid #f59e0b;
+    box-shadow:0 15px 40px rgba(0,0,0,.6);
+}
+
+.hero-texto .marca{
+    font-size:56px;
+    color:#facc15;
+    font-weight:700;
+}
+
+.hero-texto h2{
+    font-size:26px;
+    margin-top:15px;
+}
+
+/* ================= TITULOS ================= */
+
+.titulos{
+    background:#1f2937;
+    color:#facc15;
+    text-align:center;
+    padding:22px 10px;
+    border-top:4px solid #f59e0b;
+    border-bottom:4px solid #f59e0b;
+}
+
+.titulos h2{
+    font-size:34px;
+    letter-spacing:1px;
+}
+
+/* ================= QUIEN SOY ================= */
+
+.quien {
+    background:#f3f4f6;
+    color:#111827;
+    padding:20px 20px;
+    text-align:center;
+}
+
+.quien p{
+    max-width:850px;
+    margin:auto;
+    font-size:25px;
+    line-height:34px;
+}
+
+/* ================= GALERIA ================= */
+
+.galeria{
+    padding:60px 6%;
+    background:#e5e7eb;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+}
+
+.galeria img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    border-radius:14px;
+    transition:.25s;
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
+
+.galeria img:hover{
+    transform:scale(1.05);
+}
+
+/* ================= INFORMACION ================= */
+
+.info{
+    background:#f3f4f6;
+    color:#111827;
+    padding:20px 20px;
+    text-align:center;
+    font-size:23px;
+    line-height:40px;
+}
+
+.telefono{
+    color:#d97706;
+    font-weight:bold;
+    text-decoration:none;
+    font-size:26px;
+}
+
+.telefono:hover{
+    text-decoration:underline;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0f172a;
+    color:#facc15;
+    text-align:center;
+    padding:25px;
+    border-top:5px solid #f59e0b;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    z-index: 2000;
+    transition: transform .2s ease, box-shadow .2s ease;
+    border:3px solid #25D366;
+}
+
+.whatsapp:hover{
+    transform: scale(1.1);
+}
+
+.whatsapp img{
+    width:42px;
+    height:42px;
+}
+
+/* ================= IMAGENES LATERALES ================= */
+
+.quien,
+.info{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:40px;
+}
+
+.contenido{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.lado{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px 0;
+}
+
+.lado img{
+    max-height:200px;
+    width:auto;
+    object-fit:contain;
+}
+/* PAGINAS LEGALES */
+
+.legal-header{
+    background:black;
+    color:white;
+    width:100%;
+    min-height:140px;
+    padding:30px 10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.legal-header h1{
+    color:white;
+    font-size:48px;
+    margin:0;
+}
+
+/* CONTENIDO */
+.legal{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+    line-height:1.7;
+    font-size:18px;
+    color:#333;
+}
+
+/* TITULOS DE SECCIONES */
+.legal h2{
+    margin-top:30px;
+    margin-bottom:10px;
+    text-align:left;
+    color:black;
+}
+
+/* CENTRAR BOTON VOLVER */
+.volver-principal{
+    text-align:center;
+    margin-top:40px;
+}
+/* enlaces legales (política, aviso legal, cookies) */
+.legal a{
+color: inherit;
+text-decoration: none;
+outline: none;
+}
+
+/* al pasar el ratón */
+.legal a:hover{
+text-decoration: underline;
+}
+
+/* cuando haces click */
+.legal a:active{
+color: inherit;
+}
+
+/* cuando recibe foco (lo que te está creando el recuadro negro) */
+.legal a:focus{
+outline: none;
+}
+
+/* quita el highlight azul/gris de móviles */
+.legal a{
+-webkit-tap-highlight-color: transparent;
+}
+/* Enlaces en la política de privacidad */
+.legal a {
+    color: black;        /* pone los enlaces en negro */
+    text-decoration: none; /* opcional: quita subrayado */
+}
+
+.legal a:hover {
+    color: black;        /* mantiene negro al pasar el ratón */
+    text-decoration: underline; /* opcional: puedes dejar subrayado al hover */
+}
+.legal a[href="politica-cookies.html"] {
+    color: black;
+    text-decoration: none;
+}
+
+.legal a[href="politica-cookies.html"]:hover {
+    text-decoration: underline;
+}
+
+/* ===== BANDERAS PAGINAS LEGALES (ESCRITORIO) ===== */
+
+.idiomas-legal{
+    position:absolute;
+    top:15px;
+    right:20px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.idiomas-legal img{
+    width:38px;        /* tamaño fijo real */
+    height:auto;
+    max-height:38px;   /* IMPIDE QUE CREZCAN */
+    object-fit:contain;
+    cursor:pointer;
+}
+
+/* ================= MOVIL ================= */
+
+@media(max-width:900px){
+
+    .quien,
+    .info{
+        grid-template-columns:1fr;
+        padding:50px 20px;
+    }
+
+    .lado{
+        display:none;
+    }
+
+    nav{
+        position:static;
+        transform:none;
+        margin-top:15px;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+    .hero-texto{
+        padding:30px 40px;
+    }
+}
+
+/* ===== SEO TEXTO OCULTO ===== */
+
+.seo-texto{
+    position:absolute;
+    left:-9999px;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+/* ================= HEADER MOVIL ================= */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        padding:20px 10px 25px 10px;
+        gap:12px;
+        position:relative;
+        text-align:center;
+    }
+
+    /* LOGO */
+    .logo{
+        position:static;
+        transform:none;
+        margin-bottom:5px;
+    }
+
+    .logo img{
+        max-height:70px;
+    }
+
+    /* BANDERAS */
+    .idiomas{
+        position:static;
+        order:2;
+        margin:5px 0 10px 0;
+    }
+
+    .idiomas img{
+        width:38px;
+        margin:0 6px;
+    }
+
+    /* MENU */
+    nav{
+        position:static;
+        transform:none;
+        order:3;
+        display:flex;
+        justify-content:center;
+        gap:18px;
+        flex-wrap:wrap;
+        margin-top:5px;
+    }
+
+}
+/* ================== HEADER PAGINAS LEGALES MOVIL ================== */
+@media(max-width:768px){
+
+    .legal-header{
+        height:auto;
+        flex-direction:column;
+        padding:20px 10px 25px;
+        position:relative;
+    }
+
+    /* las banderas dejan de estar absolutas */
+    .idiomas-legal{
+        position:static;
+        order:1;
+        justify-content:center;
+        margin-bottom:10px;
+    }
+
+    .idiomas-legal img{
+        width:32px;
+    }
+
+    /* el titulo baja debajo */
+    .legal-header h1{
+        order:2;
+        font-size:34px;
+        line-height:1.2;
+        padding:0 10px;
+    }
+}
