@@ -1,0 +1,509 @@
+/* ============================================================
+   FONTANERO BARCELONA — Sistema de diseño
+   Fuentes autoalojadas (sin peticiones externas, sin cookies)
+   ============================================================ */
+
+@font-face{font-family:"Sora";src:url("../fonts/sora-latin-600-normal.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:"Sora";src:url("../fonts/sora-latin-700-normal.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:"Inter";src:url("../fonts/inter-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:"Inter";src:url("../fonts/inter-latin-500-normal.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;}
+@font-face{font-family:"Inter";src:url("../fonts/inter-latin-600-normal.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:"JetBrains Mono";src:url("../fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;}
+
+:root{
+  /* --- Color: familia de azules + un único acento funcional --- */
+  --azul-950:#071B33;   /* casi negro-azulado, texto y fondo footer */
+  --azul-900:#0A2F5C;   /* azul profundo — marca principal */
+  --azul-700:#124C8C;   /* azul medio — hover, degradados */
+  --azul-500:#1E73C7;   /* azul de acción secundaria */
+  --azul-cian:#12B4C9;  /* cian agua — detalles, iconos, subrayados */
+  --azul-050:#EAF3FC;   /* fondo de sección claro */
+  --azul-025:#F5F9FE;   /* fondo alterno casi blanco */
+  --blanco:#FFFFFF;
+  --texto:#0F2540;
+  --texto-suave:#4B617C;
+  --borde:#D7E5F5;
+  --whatsapp:#25D366;   /* verde WhatsApp — reservado solo para botones de WhatsApp */
+  --whatsapp-dark:#1DA851;
+  --sombra: 0 10px 30px -12px rgba(10,47,92,.35);
+
+  --fuente-display:"Sora",ui-sans-serif,system-ui,sans-serif;
+  --fuente-cuerpo:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --fuente-datos:"JetBrains Mono",ui-monospace,monospace;
+
+  --radio:14px;
+  --contenedor:1180px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+}
+
+body{
+  margin:0;
+  font-family:var(--fuente-cuerpo);
+  color:var(--texto);
+  background:var(--blanco);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{max-width:100%;display:block;}
+a{color:inherit;}
+h1,h2,h3,h4{font-family:var(--fuente-display);line-height:1.15;margin:0 0 .5em;color:var(--azul-950);}
+p{margin:0 0 1em;}
+ul{margin:0;padding:0;}
+li{list-style:none;}
+
+.contenedor{max-width:var(--contenedor);margin:0 auto;padding:0 24px;}
+
+a:focus-visible,button:focus-visible,summary:focus-visible{
+  outline:3px solid var(--azul-cian);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+.eyebrow{
+  font-family:var(--fuente-datos);
+  font-size:.78rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--azul-cian);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-weight:500;
+}
+.eyebrow::before{
+  content:"";
+  width:22px;height:2px;background:var(--azul-cian);display:inline-block;border-radius:2px;
+}
+
+/* ---------- Botones ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 28px;
+  border-radius:999px;
+  font-family:var(--fuente-cuerpo);
+  font-weight:600;
+  font-size:1.02rem;
+  text-decoration:none;
+  border:2px solid transparent;
+  cursor:pointer;
+  transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-llamar{
+  background:var(--blanco);
+  color:var(--azul-900);
+  box-shadow:var(--sombra);
+}
+.btn-llamar:hover{box-shadow:0 14px 34px -10px rgba(10,47,92,.5);}
+.btn-whatsapp{
+  background:var(--whatsapp);
+  color:var(--blanco);
+  box-shadow:0 10px 26px -10px rgba(37,211,102,.55);
+}
+.btn-whatsapp:hover{background:var(--whatsapp-dark);}
+.btn-outline{
+  background:transparent;
+  border-color:rgba(255,255,255,.55);
+  color:var(--blanco);
+}
+.btn-outline:hover{border-color:var(--blanco);background:rgba(255,255,255,.08);}
+.btn-oscuro{
+  background:var(--azul-900);
+  color:var(--blanco);
+}
+.btn-oscuro:hover{background:var(--azul-700);}
+.btn-bloque{width:100%;}
+
+.icono-btn{width:20px;height:20px;flex:none;}
+
+/* ---------- Motivo de firma: la "línea de tubería" ---------- */
+/* Un trazo continuo con juntas circulares que recorre la página
+   marcando el inicio de cada sección, como un esquema de fontanería. */
+.linea-tuberia{
+  position:absolute;
+  left:50%;
+  top:-1px;
+  transform:translateX(-50%);
+  width:2px;
+  height:56px;
+  background:repeating-linear-gradient(to bottom, var(--azul-cian) 0 6px, transparent 6px 12px);
+}
+.junta{
+  position:absolute;
+  left:50%;top:-1px;transform:translate(-50%,-50%);
+  width:14px;height:14px;border-radius:50%;
+  background:var(--blanco);
+  border:3px solid var(--azul-cian);
+}
+.seccion{position:relative;padding:96px 0;}
+.seccion-tubo{padding-top:130px;}
+
+/* ---------- Header ---------- */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--borde);
+}
+.header-interior{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 24px;gap:16px;
+}
+.logo-hueco{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--fuente-display);font-weight:700;font-size:1.2rem;color:var(--azul-900);
+  text-decoration:none;
+}
+.logo-marca{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--azul-050);
+  border:1.5px dashed var(--azul-500);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--azul-500);
+  flex:none;
+  overflow:hidden;
+}
+.logo-marca svg{width:24px;height:24px;}
+.nav-principal{display:flex;gap:28px;align-items:center;}
+.nav-principal a{
+  text-decoration:none;color:var(--texto);font-weight:500;font-size:.96rem;
+  position:relative;padding:6px 0;
+}
+.nav-principal a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--azul-cian);
+  transform:scaleX(0);transform-origin:left;transition:transform .2s ease;
+}
+.nav-principal a:hover::after{transform:scaleX(1);}
+.header-acciones{display:flex;align-items:center;gap:12px;}
+.telefono-header{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--fuente-datos);font-weight:500;color:var(--azul-900);
+  text-decoration:none;font-size:.98rem;
+}
+.menu-toggle{
+  display:none;background:none;border:none;cursor:pointer;padding:8px;
+}
+.menu-toggle svg{width:26px;height:26px;color:var(--azul-900);}
+
+/* ---------- Hero ---------- */
+.hero{
+  background:radial-gradient(ellipse 120% 100% at 50% -10%, var(--azul-700) 0%, var(--azul-900) 45%, var(--azul-950) 100%);
+  color:var(--blanco);
+  padding:76px 0 90px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(18,180,201,.18), transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(18,180,201,.12), transparent 45%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;
+}
+.hero h1{
+  color:var(--blanco);
+  font-size:clamp(2.1rem, 4vw, 3.35rem);
+  margin-bottom:.4em;
+  letter-spacing:-.01em;
+}
+.hero h1 span{color:var(--azul-cian);}
+.hero-sub{
+  font-size:1.14rem;color:rgba(255,255,255,.86);max-width:52ch;margin-bottom:2em;
+}
+.hero-acciones{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:2.6em;}
+.hero-badges{display:flex;flex-wrap:wrap;gap:22px;}
+.hero-badge{display:flex;align-items:center;gap:10px;font-size:.92rem;color:rgba(255,255,255,.85);}
+.hero-badge svg{width:20px;height:20px;color:var(--azul-cian);flex:none;}
+
+.hero-panel{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:20px;
+  padding:30px;
+  backdrop-filter:blur(6px);
+  position:relative;
+  z-index:1;
+}
+.hero-panel-titulo{
+  font-family:var(--fuente-display);font-weight:600;color:var(--blanco);
+  font-size:1.05rem;margin-bottom:18px;display:flex;align-items:center;gap:10px;
+}
+.hero-panel-titulo svg{width:22px;height:22px;color:var(--azul-cian);}
+.mini-lista{display:flex;flex-direction:column;gap:14px;}
+.mini-lista li{
+  display:flex;gap:12px;align-items:flex-start;
+  color:rgba(255,255,255,.88);font-size:.96rem;
+}
+.mini-lista svg{width:20px;height:20px;color:var(--azul-cian);flex:none;margin-top:2px;}
+.hero-tarifa{
+  margin-top:22px;padding-top:20px;border-top:1px dashed rgba(255,255,255,.25);
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.hero-tarifa-num{font-family:var(--fuente-datos);font-size:1.5rem;color:var(--azul-cian);font-weight:500;}
+.hero-tarifa-label{font-size:.85rem;color:rgba(255,255,255,.7);}
+
+/* ---------- Barra de confianza ---------- */
+.barra-confianza{
+  background:var(--azul-025);
+  border-bottom:1px solid var(--borde);
+}
+.barra-confianza .contenedor{
+  display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
+  padding:22px 24px;
+}
+.confianza-item{display:flex;align-items:center;gap:10px;color:var(--texto-suave);font-size:.92rem;font-weight:500;}
+.confianza-item svg{width:20px;height:20px;color:var(--azul-500);flex:none;}
+
+/* ---------- Servicios ---------- */
+.cabecera-seccion{max-width:640px;margin:0 auto 52px;text-align:center;}
+.cabecera-seccion h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+.cabecera-seccion p{color:var(--texto-suave);font-size:1.05rem;}
+
+.grid-servicios{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.tarjeta-servicio{
+  background:var(--blanco);
+  border:1px solid var(--borde);
+  border-radius:var(--radio);
+  padding:30px 26px;
+  transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.tarjeta-servicio:hover{border-color:var(--azul-cian);box-shadow:var(--sombra);transform:translateY(-4px);}
+.tarjeta-servicio .icono-wrap{
+  width:52px;height:52px;border-radius:12px;
+  background:var(--azul-050);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:18px;
+}
+.tarjeta-servicio .icono-wrap svg{width:26px;height:26px;color:var(--azul-900);}
+.tarjeta-servicio h3{font-size:1.15rem;margin-bottom:.4em;}
+.tarjeta-servicio p{color:var(--texto-suave);font-size:.96rem;margin-bottom:0;}
+
+/* ---------- Por qué elegirnos ---------- */
+.fondo-claro{background:var(--azul-050);}
+.grid-razones{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.tarjeta-razon{
+  background:var(--blanco);
+  border-radius:var(--radio);
+  padding:26px 22px;
+  text-align:left;
+  border:1px solid var(--borde);
+}
+.tarjeta-razon .num{
+  font-family:var(--fuente-datos);color:var(--azul-cian);font-size:.85rem;font-weight:500;
+  display:block;margin-bottom:10px;letter-spacing:.06em;
+}
+.tarjeta-razon h3{font-size:1.05rem;margin-bottom:.35em;}
+.tarjeta-razon p{color:var(--texto-suave);font-size:.92rem;margin-bottom:0;}
+
+/* ---------- Cómo trabajamos (proceso real → sí lleva numeración) ---------- */
+.pasos{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;
+}
+.paso{
+  position:relative;padding:0 20px;text-align:center;
+}
+.paso::before{
+  content:"";position:absolute;top:27px;left:calc(-50% + 27px);right:calc(50% + 27px);
+  height:2px;background:repeating-linear-gradient(to right, var(--azul-cian) 0 6px, transparent 6px 12px);
+}
+.paso:first-child::before{display:none;}
+.paso-circulo{
+  width:54px;height:54px;border-radius:50%;
+  background:var(--azul-900);color:var(--blanco);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--fuente-datos);font-weight:500;font-size:1.1rem;
+  margin:0 auto 18px;position:relative;z-index:1;
+}
+.paso h3{font-size:1.02rem;margin-bottom:.35em;}
+.paso p{color:var(--texto-suave);font-size:.9rem;margin-bottom:0;}
+
+/* ---------- Zonas Barcelona ---------- */
+.grid-zonas{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
+}
+.chip-zona{
+  display:flex;align-items:center;gap:10px;
+  background:var(--blanco);border:1px solid var(--borde);border-radius:11px;
+  padding:14px 16px;font-weight:500;font-size:.94rem;
+}
+.chip-zona svg{width:16px;height:16px;color:var(--azul-cian);flex:none;}
+.zonas-nota{margin-top:28px;text-align:center;color:var(--texto-suave);font-size:.95rem;}
+
+/* ---------- Testimonios ---------- */
+.grid-testimonios{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.tarjeta-testimonio{
+  background:var(--blanco);border:1px solid var(--borde);border-radius:var(--radio);
+  padding:28px;display:flex;flex-direction:column;gap:16px;
+}
+.estrellas{display:flex;gap:3px;color:var(--azul-cian);}
+.estrellas svg{width:16px;height:16px;}
+.tarjeta-testimonio p{color:var(--texto);font-size:.98rem;margin-bottom:0;flex:1;}
+.testimonio-autor{display:flex;align-items:center;gap:12px;}
+.avatar-inicial{
+  width:38px;height:38px;border-radius:50%;background:var(--azul-900);color:var(--blanco);
+  display:flex;align-items:center;justify-content:center;font-family:var(--fuente-display);font-weight:600;font-size:.9rem;flex:none;
+}
+.testimonio-nombre{font-weight:600;font-size:.92rem;}
+.testimonio-zona{font-size:.82rem;color:var(--texto-suave);}
+
+/* ---------- FAQ ---------- */
+.faq-lista{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.faq-item{
+  background:var(--blanco);border:1px solid var(--borde);border-radius:12px;overflow:hidden;
+}
+.faq-item summary{
+  cursor:pointer;padding:20px 24px;font-weight:600;font-size:1rem;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  list-style:none;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary .signo{
+  flex:none;width:26px;height:26px;border-radius:50%;background:var(--azul-050);color:var(--azul-900);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:transform .2s ease;
+}
+.faq-item[open] summary .signo{transform:rotate(45deg);}
+.faq-item .faq-respuesta{padding:0 24px 22px;color:var(--texto-suave);font-size:.96rem;}
+
+/* ---------- CTA final ---------- */
+.cta-final{
+  background:linear-gradient(135deg, var(--azul-900), var(--azul-950));
+  color:var(--blanco);text-align:center;border-radius:24px;
+  padding:64px 40px;position:relative;overflow:hidden;
+}
+.cta-final::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 20%, rgba(18,180,201,.25), transparent 50%);
+}
+.cta-final-interior{position:relative;z-index:1;}
+.cta-final h2{color:var(--blanco);font-size:clamp(1.6rem,3vw,2.2rem);}
+.cta-final p{color:rgba(255,255,255,.82);max-width:52ch;margin:0 auto 30px;}
+.cta-final .hero-acciones{justify-content:center;margin-bottom:0;}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--azul-950);color:rgba(255,255,255,.72);padding:64px 0 28px;}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;
+}
+.footer-marca{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.footer-marca .logo-marca{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.3);color:var(--azul-cian);}
+.footer-marca span{font-family:var(--fuente-display);color:var(--blanco);font-weight:700;font-size:1.1rem;}
+.footer p{font-size:.92rem;line-height:1.6;}
+.footer h4{color:var(--blanco);font-size:.88rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px;font-family:var(--fuente-cuerpo);font-weight:600;}
+.footer-lista{display:flex;flex-direction:column;gap:11px;}
+.footer-lista a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.92rem;}
+.footer-lista a:hover{color:var(--blanco);text-decoration:underline;}
+.footer-contacto-item{display:flex;align-items:center;gap:10px;font-size:.92rem;margin-bottom:11px;}
+.footer-contacto-item svg{width:17px;height:17px;color:var(--azul-cian);flex:none;}
+.footer-linea{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem;}
+.footer-linea a{color:rgba(255,255,255,.6);text-decoration:none;}
+.footer-linea a:hover{color:var(--blanco);}
+
+/* ---------- Barra flotante WhatsApp (escritorio) ---------- */
+.whatsapp-flotante{
+  position:fixed;right:26px;bottom:26px;z-index:60;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--whatsapp);color:var(--blanco);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 28px -8px rgba(37,211,102,.65);
+  text-decoration:none;
+  transition:transform .15s ease;
+}
+.whatsapp-flotante:hover{transform:scale(1.07);}
+.whatsapp-flotante svg{width:30px;height:30px;}
+
+/* ---------- Barra fija móvil ---------- */
+.barra-movil{
+  display:none;
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:var(--blanco);
+  border-top:1px solid var(--borde);
+  box-shadow:0 -8px 24px -12px rgba(10,47,92,.25);
+  padding:10px 14px;
+  gap:10px;
+}
+.barra-movil .btn{flex:1;padding:14px 10px;font-size:.95rem;}
+
+/* ---------- Utilidades páginas legales ---------- */
+.legal-wrap{max-width:800px;margin:0 auto;padding:70px 24px 100px;}
+.legal-wrap h1{font-size:2rem;margin-bottom:.3em;}
+.legal-fecha{color:var(--texto-suave);font-size:.9rem;margin-bottom:2.4em;}
+.legal-wrap h2{font-size:1.25rem;margin-top:2em;}
+.legal-wrap p,.legal-wrap li{color:var(--texto-suave);font-size:.98rem;}
+.legal-wrap li{list-style:disc;margin-left:1.4em;margin-bottom:.5em;}
+.aviso-editar{
+  background:#FFF6E5;border:1px solid #F3D79A;color:#7A5B12;
+  padding:16px 18px;border-radius:10px;font-size:.9rem;margin-bottom:2em;
+}
+
+/* ---------- Página 404 ---------- */
+.pagina-404{
+  min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:80px 24px;
+}
+.pagina-404 .codigo{
+  font-family:var(--fuente-datos);font-size:5rem;color:var(--azul-050);
+  -webkit-text-stroke:2px var(--azul-cian);color:transparent;font-weight:500;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 980px){
+  .hero-grid{grid-template-columns:1fr;}
+  .grid-servicios{grid-template-columns:repeat(2,1fr);}
+  .grid-razones{grid-template-columns:repeat(2,1fr);}
+  .grid-testimonios{grid-template-columns:1fr;}
+  .grid-zonas{grid-template-columns:repeat(3,1fr);}
+  .pasos{grid-template-columns:repeat(2,1fr);row-gap:36px;}
+  .paso::before{display:none;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+
+@media (max-width: 720px){
+  .nav-principal{
+    position:fixed;top:73px;left:0;right:0;bottom:0;
+    background:var(--blanco);
+    flex-direction:column;align-items:flex-start;
+    padding:28px 24px;gap:6px;
+    transform:translateX(100%);
+    transition:transform .25s ease;
+    z-index:49;
+  }
+  .nav-principal.abierto{transform:translateX(0);}
+  .nav-principal a{width:100%;padding:14px 0;border-bottom:1px solid var(--borde);font-size:1.05rem;}
+  .menu-toggle{display:block;}
+  .telefono-header span{display:none;}
+  .hero{padding:44px 0 100px;}
+  .hero-acciones{flex-direction:column;align-items:stretch;}
+  .hero-acciones .btn{width:100%;}
+  .seccion{padding:64px 0;}
+  .grid-servicios{grid-template-columns:1fr;}
+  .grid-razones{grid-template-columns:1fr;}
+  .grid-zonas{grid-template-columns:repeat(2,1fr);}
+  .barra-confianza .contenedor{justify-content:flex-start;gap:18px 26px;}
+  .whatsapp-flotante{display:none;}
+  .barra-movil{display:flex;}
+  body{padding-bottom:74px;}
+  .cta-final{padding:48px 24px;}
+  .footer-grid{grid-template-columns:1fr;gap:32px;}
+  .footer-linea{flex-direction:column;align-items:flex-start;}
+}
